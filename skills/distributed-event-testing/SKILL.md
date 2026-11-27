@@ -62,6 +62,7 @@ Each failure mode below becomes a spec scenario (Given/When/Then) before it beco
 | Schema evolution | Schema Registry compatibility modes (BACKWARD, FORWARD, FULL) | Incompatible schema changes are rejected in CI |
 | Compaction and retention | Compacted topics keep the latest value per key; tombstones delete | Rebuilding state from a compacted topic; tombstone handling |
 | Lag and throughput | Consumer lag per partition; batch size, `linger.ms`, compression | Lag alerts fire and recover; throughput baselines (see `performance-and-nfr-testing`) |
+| Kafka 4.x | KRaft only (no ZooKeeper); the new consumer group protocol (KIP-848) for faster rebalances; share groups, which are Queues for Kafka (KIP-932), production-ready in 4.2 | Rebalance behaviour under the new protocol; share-group acknowledgement, redelivery and delivery counts |
 | Headers | Correlation id, `traceparent`, schema version, retry count | Headers survive retries, DLQ and redrive |
 
 **Tools:** Testcontainers Kafka (real broker in tests), Toxiproxy between clients and the broker, the Kafka CLI tools (`kafka-consumer-groups`, perf tools), and an admin client in tests to inspect offsets and lag.
