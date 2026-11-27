@@ -18,6 +18,7 @@ Shared [Agent Skills](https://agentskills.io) for **Claude Code** and **OpenAI C
 | [`agent-testing`](skills/agent-testing/SKILL.md) | testing AI agents: record/replay, trajectories, evals, red-teaming, budgets |
 | [`observability-instrumentation`](skills/observability-instrumentation/SKILL.md) | OpenTelemetry traces, metrics and logs, Kafka propagation, telemetry tests |
 | [`bdd-acceptance-testing`](skills/bdd-acceptance-testing/SKILL.md) | BDD for e2e functional and regression tests: spec scenarios as Gherkin features, declarative steps, playwright-bdd, pytest-bdd, smoke/regression tags, living documentation |
+| [`exploratory-testing`](skills/exploratory-testing/SKILL.md) | charters, time-boxed sessions, Whittaker's tours adapted to services and event streams, testing in the small, scenario variation, PROOF debriefs, bugs into regression scenarios |
 | [`distributed-event-testing`](skills/distributed-event-testing/SKILL.md) | event flows and state machines, duplicate, delayed, missing and out-of-order events, retries, idempotency, DLQ, sagas, eventual consistency, reconciliation, trace-based tests |
 | [`performance-and-nfr-testing`](skills/performance-and-nfr-testing/SKILL.md) | load, stress, spike, soak and breakpoint tests (k6, Locust), SLO thresholds, profiling, chaos and fault injection, Lighthouse CI, accessibility, AI perf analysis |
 | [`security-hardening`](skills/security-hardening/SKILL.md) | repo rulesets, SAST (CodeQL, Semgrep), Dependabot, SBOM and signing, IaC and container scanning, DAST, STRIDE, OWASP Top 10 |
