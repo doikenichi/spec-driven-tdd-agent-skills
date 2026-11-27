@@ -49,5 +49,22 @@ Each failure mode below becomes a spec scenario (Given/When/Then) before it beco
 - Debug by following one correlation id across logs, traces and metrics. Write the steps into runbooks (see `observability-instrumentation`).
 - Metrics that reveal distributed bugs: consumer lag, DLQ rate, retry count, duplicate-detected count, and the reconciliation mismatch count.
 
-## 7. Explaining it (interviews and clients)
+## 7. Kafka specifics (know them, and test them)
+| Concept | What to know | What to test |
+|---|---|---|
+| Partitions and keys | Ordering is guaranteed only within a partition; the key chooses the partition | Same-key events stay ordered; a hot key creates skew |
+| Producer durability | `acks=all`, `enable.idempotence=true` (no duplicates from producer retries), `min.insync.replicas` | A broker restart during produce loses nothing and duplicates nothing |
+| Delivery semantics | At-most-once (commit before processing) vs at-least-once (commit after) | A crash between processing and commit replays; the consumer is idempotent |
+| Exactly-once (EOS) | Transactions for read-process-write inside Kafka; consumers use `isolation.level=read_committed` | Aborted transactions are never visible; external side effects still need idempotency |
+| Consumer groups and rebalances | Cooperative-sticky assignment; static membership; `max.poll.interval.ms` | Scaling or killing consumers: no loss, bounded duplicates, lag recovers |
+| Offsets and replay | Manual commits; reset to earliest or latest; replay from a timestamp | A replay rebuilds state correctly (idempotent projections) |
+| Retries and DLQ | Non-blocking retry topics with delays, plus a DLQ; no infinite loops | Poison message → DLQ with the error headers; redrive works |
+| Schema evolution | Schema Registry compatibility modes (BACKWARD, FORWARD, FULL) | Incompatible schema changes are rejected in CI |
+| Compaction and retention | Compacted topics keep the latest value per key; tombstones delete | Rebuilding state from a compacted topic; tombstone handling |
+| Lag and throughput | Consumer lag per partition; batch size, `linger.ms`, compression | Lag alerts fire and recover; throughput baselines (see `performance-and-nfr-testing`) |
+| Headers | Correlation id, `traceparent`, schema version, retry count | Headers survive retries, DLQ and redrive |
+
+**Tools:** Testcontainers Kafka (real broker in tests), Toxiproxy between clients and the broker, the Kafka CLI tools (`kafka-consumer-groups`, perf tools), and an admin client in tests to inspect offsets and lag.
+
+## 8. Explaining it (interviews and clients)
 Structure the answer as: **model → levels → failure modes → consistency → downstream validation → observability → automation in CI**, then give a concrete example from real work, naming the bug that was found and how the test caught it.
