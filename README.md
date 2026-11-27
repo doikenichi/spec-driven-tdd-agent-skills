@@ -15,6 +15,7 @@ Shared [Agent Skills](https://agentskills.io) for **Claude Code** and **OpenAI C
 | [`api-and-event-contracts`](skills/api-and-event-contracts/SKILL.md) | OpenAPI 3.1, AsyncAPI 3, schema evolution, contract tests |
 | [`agent-testing`](skills/agent-testing/SKILL.md) | testing AI agents: record/replay, trajectories, evals, red-teaming, budgets |
 | [`observability-instrumentation`](skills/observability-instrumentation/SKILL.md) | OpenTelemetry traces, metrics and logs, Kafka propagation, telemetry tests |
+| [`security-hardening`](skills/security-hardening/SKILL.md) | repo rulesets, SAST (CodeQL, Semgrep), Dependabot, SBOM and signing, IaC and container scanning, DAST, STRIDE, OWASP Top 10 |
 | [`code-review-mentor`](skills/code-review-mentor/SKILL.md) | senior-engineer review with a rubric and reference solutions |
 
 ## Install into a project
