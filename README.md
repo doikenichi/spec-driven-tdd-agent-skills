@@ -8,6 +8,8 @@ Shared [Agent Skills](https://agentskills.io) for **Claude Code** and **OpenAI C
 
 | Skill | Use it for |
 |---|---|
+| [`lean-inception`](skills/lean-inception/SKILL.md) | Paulo Caroli's Lean Inception: vision, is/is not, personas, journeys, feature review, Feature Sequencer rules, MVP Canvas; artifacts drive the roadmap |
+| [`human-centered-ux`](skills/human-centered-ux/SKILL.md) | Don Norman's principles: discoverability, affordances, signifiers, constraints, mapping, feedback, conceptual models, designing for error, alerts, accessibility |
 | [`spec-driven-change`](skills/spec-driven-change/SKILL.md) | OpenSpec proposal, spec delta with Given/When/Then scenarios, design, tasks |
 | [`tdd-red-green-refactor`](skills/tdd-red-green-refactor/SKILL.md) | test-first implementation in Python and TypeScript |
 | [`uml-and-c4-diagrams`](skills/uml-and-c4-diagrams/SKILL.md) | UML and C4 diagrams as Mermaid, rendered on GitHub |
