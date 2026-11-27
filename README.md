@@ -18,6 +18,7 @@ Shared [Agent Skills](https://agentskills.io) for **Claude Code** and **OpenAI C
 | [`distributed-event-testing`](skills/distributed-event-testing/SKILL.md) | event flows and state machines, duplicate, delayed, missing and out-of-order events, retries, idempotency, DLQ, sagas, eventual consistency, reconciliation, trace-based tests |
 | [`performance-and-nfr-testing`](skills/performance-and-nfr-testing/SKILL.md) | load, stress, spike, soak and breakpoint tests (k6, Locust), SLO thresholds, profiling, chaos and fault injection, Lighthouse CI, accessibility, AI perf analysis |
 | [`security-hardening`](skills/security-hardening/SKILL.md) | repo rulesets, SAST (CodeQL, Semgrep), Dependabot, SBOM and signing, IaC and container scanning, DAST, STRIDE, OWASP Top 10 |
+| [`reading-companion`](skills/reading-companion/SKILL.md) | turning technical books into practice: just-in-time reading, chapter references, reflection notes, spaced recall, interview tie-ins (no reproduced text) |
 | [`code-review-mentor`](skills/code-review-mentor/SKILL.md) | senior-engineer review with a rubric and reference solutions |
 
 ## Install into a project
